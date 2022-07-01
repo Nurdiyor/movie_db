@@ -50,4 +50,21 @@ class MainViewModel @Inject constructor(
             }
         }
     }
+
+    fun getAllNewMoviesRx() {
+        mainUseCase.getAllNewMoviesRx().observeForever {
+            when (it) {
+                is BaseNetworkResult.Loading -> {
+
+                }
+                is BaseNetworkResult.Success -> {
+//                    movieList.value = it.data
+                    Log.d("DDDD", "getAllNewMoviesRx: ${it.data}")
+                }
+                is BaseNetworkResult.Error -> {
+
+                }
+            }
+        }
+    }
 }

@@ -20,6 +20,6 @@ class MainFragment : BaseFragment<MainFragmentBinding>(MainFragmentBinding::infl
             }
 
         }
-        viewModel.getAllNewMovies()
+        viewModel.getAllNewMoviesRx()
     }
 }
